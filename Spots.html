@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Tourist Spots | GoBuk</title>
+  
+  <link rel="stylesheet" href="spots.css">
+ 
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header>
+     <div class="logo">
+        <img src="images/GoBuk.jpg" alt="GoBuk Logo" class="logo-img">
+      <span>GoBuk</span>
+     </div>
+      <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="spots.html" class="active">Spots</a></li>
+        <li><a href="GoBuk.html#about">About</a></li>
+        <li><a href="GoBuk.html#gallery">Gallery</a></li>
+        <li><a href="GoBuk.html#contact">Contact</a></li>
+        <li><a href="#" id="destinationsToggle">My Destinations ▾</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="destinations-dropdown" id="destinationsDropdown">
+    <ul id="destinationList">
+        <p id="emptyMessage">No added locations yet!</p>
+    </ul>
+    <p class="total">Total Locations: <span id="destinationTotal">0</span> destinations</p>
+    <div class="actions">
+        <button class="clear-btn" id="clearCart" disabled>Clear All</button>
+        <button class="save-btn" id="save" disabled>Save</button>
+    </div>
+  </div>
+
+  <main class="spots-container">
+    <div class="spots-header">
+      <h1>Discover All Spots</h1>
+      <p>Add your favorites to "My Destinations" to plan your trip.</p>
+    </div>
+
+    <div class="spots-grid">
+      <div class="spot-card">
+        <img src="images/dahilayan.jpg">
+        <div class="spot-info">
+          <h3>Dahilayan Park</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="dahilayanBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/lake-apo.jpg">
+        <div class="spot-info">
+          <h3>Lake Apo View Deck</h3>
+          <p>Valencia City, Bukidnon</p>
+          <button id="lakeApoBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/luan-luan.jpg">
+        <div class="spot-info">
+          <h3>Luan Luan Spring Resort</h3>
+          <p>Quezon, Bukidnon</p>
+          <button id="luanLuanBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/hamugaway-ridge.jpg">
+        <div class="spot-info">
+          <h3>Hamugaway Ridge</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="hamugawayBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/woods-private-pool.jpg">
+        <div class="spot-info">
+          <h3>Woods Private Pool</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="woodsPoolBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/balaba-farm-resort.jpg">
+        <div class="spot-info">
+          <h3>Balaba Farm Resort</h3>
+          <p>Maramag, Bukidnon</p>
+          <button id="balabaFarmBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/lake-pinamaloy.jpg">
+        <div class="spot-info">
+          <h3>Lake Pinamaloy</h3>
+          <p>Don Carlos, Bukidnon</p>
+          <button id="lakePinamaloyBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/malungon-cold-spring.jpg">
+        <div class="spot-info">
+          <h3>Malungon Cold Spring</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="malungonSpringBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/overview.jpg">
+        <div class="spot-info">
+          <h3>Overview Park</h3>
+          <p>Quezon, Bukidnon</p>
+          <button id="overviewParkBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/greek-hills.jpg">
+        <div class="spot-info">
+          <h3>Greek Hills</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="greekHillsBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/Mt-anahawon.jpg">
+        <div class="spot-info">
+          <h3>Mt. Anhawaon</h3>
+          <p>Valencia City, Bukidnon</p>
+          <button id="mtAnhawaonBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/cedar.jpg">
+        <div class="spot-info">
+          <h3>Cedar</h3>
+          <p>Impasug-ong, Bukidnon</p>
+          <button id="cedarBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/abbey-of-the-transfiguration.jpg">
+        <div class="spot-info">
+          <h3>Abbey of the Transfiguration</h3>
+          <p>Malaybalay, Bukidnon</p>
+          <button id="abbeyBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/bukidnon-communal-ranch.jpg">
+        <div class="spot-info">
+          <h3>Communal Ranch</h3>
+          <p>Impasug-ong, Bukidnon</p>
+          <button id="communalRanchBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <img src="images/Sabangan-camp-site.jpg">
+        <div class="spot-info">
+          <h3>Sabangan Camping Site</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+          <button id="sabanganBtn" class="add-btn">Add</button>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <div id="popup" class="add-popup">
+    Added to My Destinations!
+  </div>
+
+  <footer>
+    <p>© 2025 GoBuk | Discover Bukidnon</p>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="spots.js"></script>
+</body>
+</html>
