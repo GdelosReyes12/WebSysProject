@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #fffdf7;
+  --text-color: #333;
+  --text-light: #666;
+  --header-bg: #2e5137;
+  --header-text: #fff;
+  --header-hover: #f4a261;
+  --card-bg: #fff;
+  --card-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  --btn-bg: #2c5530;
+  --btn-text: #fff;
+  --btn-hover: #1e3c22;
+  --accent-color: #f4a261;
+  --border-color: #ccc;
+  --footer-bg: #f9f9f9;
+  --gallery-overlay: rgba(46, 81, 55, 0.9);
+  --gallery-header-img: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Bukidnon.jpg');
+}
+
+html.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-light: #aaa;
+  --header-bg: #1f1f1f;
+  --header-text: #e0e0e0;
+  --header-hover: #58a069;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  --btn-bg: #2e5137;
+  --btn-text: #fff;
+  --btn-hover: #3a6845;
+  --accent-color: #f4a261;
+  --border-color: #444;
+  --footer-bg: #1f1f1f;
+  --gallery-overlay: rgba(0, 0, 0, 0.8);
+  --gallery-header-img: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Bukidnon.jpg');
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.3s, transform 0.3s;
+}
+.theme-toggle-btn:hover {
+  color: var(--header-hover);
+  transform: scale(1.1);
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--header-hover);
+}
+
+.destinations-dropdown {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 40px;
+  width: 320px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 15px;
+  z-index: 999;
+}
+
+.destinations-dropdown ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#emptyMessage {
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+.destinations-dropdown li {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.delete-btn {
+  background: #b23a3a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.delete-btn:hover {
+  background: #972d2d;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.clear-btn,
+.save-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.clear-btn:disabled,
+.save-btn:disabled {
+  background: var(--text-light);
+  cursor: not-allowed;
+}
+.clear-btn:hover:not(:disabled),
+.save-btn:hover:not(:disabled) {
+  background: var(--btn-hover);
+}
+
+.total {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.spots-container {
+  padding-top: 70px;
+}
+
+.spots-header {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #1f3c2e, #4e8d6e);
+  color: #fff;
+}
+html.dark-mode .spots-header {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.spots-header h1 {
+  font-size: 2.2em;
+}
+
+.spots-header p {
+  opacity: 0.9;
+}
+
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.spot-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.spot-card:hover {
+  transform: scale(1.03);
+}
+
+.spot-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.spot-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.spot-info h3 {
+  margin: 8px 0 5px;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.spot-info p {
+  color: var(--text-light);
+  font-size: 0.9em;
+}
+
+.add-btn {
+  margin-top: 10px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.add-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4e8d6e;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+html.dark-mode .add-popup {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.add-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px 50px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
