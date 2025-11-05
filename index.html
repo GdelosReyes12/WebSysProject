@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoBuk | Discover Bukidnon’s Hidden Gems</title>
+  <link rel="stylesheet" href="GoBuk.css">
+  <link rel="preload" as="image" href="images/Bukidnon.jpg">
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/GoBuk.jpg" alt="GoBuk Logo" class="logo-img">
+      <span>GoBuk</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#top" class="active">Home</a></li>
+        <li><a href="spots.html">Spots</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Discover Bukidnon’s Gems</h1>
+    <p>Experience the thrill, nature, and beauty that Bukidnon has to offer.</p>
+    <a href="spots.html" class="btn">Explore Now</a>
+  </section>
+
+  <section id="about">
+    <h2>About GoBuk</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Your ultimate guide to exploring the stunning province of Bukidnon. From majestic mountains to serene springs, we're here to help you discover the hidden gems and popular spots that make this region truly special.</p>
+        <p>Our mission is to provide you with comprehensive info, beautiful galleries, and an easy way to plan your next adventure.</p>
+      </div>
+      <div class="about-image">
+        <img src="images/about-us.jpg" alt="A beautiful view in Bukidnon">
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-spots">
+    <h2>Featured Spots</h2>
+    <div class="spots-grid">
+      <div class="spot-card">
+        <img src="images/dahilayan.jpg" alt="Dahilayan Park">
+        <div class="spot-info">
+          <h3>Dahilayan Park</h3>
+          <p>Manolo Fortich, Bukidnon</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <img src="images/lake-apo.jpg" alt="Lake Apo">
+        <div class="spot-info">
+          <h3>Lake Apo View Deck</h3>
+          <p>Valencia City, Bukidnon</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <img src="images/bukidnon-communal-ranch.jpg" alt="Communal Ranch">
+        <div class="spot-info">
+          <h3>Communal Ranch</h3>
+          <p>Impasug-ong, Bukidnon</p>
+        </div>
+      </div>
+      <div class="spot-card">
+        <img src="images/Mt-anahawon.jpg" alt="Mt. Anhawaon">
+        <div class="spot-info">
+          <h3>Mt. Anhawaon</h3>
+          <p>Valencia City, Bukidnon</p>
+        </div>
+      </div>
+    </div>
+    <a href="spots.html" class="btn">See All Spots</a>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-preview">
+      <img src="images/bukid1.jpg" alt="Dahilayan">
+      <img src="images/bukid2.jpg" alt="Mt. Anhawaon">
+      <img src="images/bukid3.jpg" alt="Cedar">
+      <img src="images/bukid4.jpg" alt="Communal Ranch">
+      <img src="images/bukid5.jpg" alt="Communal Ranch">
+    </div>
+    <a href="Gallery.html" class="btn">View Full Gallery</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div class="socials">
+        <h3>Follow our socials</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/gaiusv.delosreyes" target="_blank" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/bakplip_una_ulo" target="_blank" class="social-icon">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 GoBuk | Discover Bukidnon</p>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+  <script src="theme.js"></script>
+  <script src="GoBuk.js"></script>
+</body>
+</html>
